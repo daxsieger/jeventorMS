@@ -1,0 +1,43 @@
+{
+    "name": "Transizioni",
+    "fields": [
+        {
+            "fieldName": "idTransizione",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "dsTransizione",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "processo",
+            "otherEntityName": "processo",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "stadioIniziale",
+            "otherEntityName": "stadio",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "stadioFinale",
+            "otherEntityName": "stadio",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20180704162126",
+    "entityTableName": "transizioni",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "microserviceName": "jeventorMS"
+}

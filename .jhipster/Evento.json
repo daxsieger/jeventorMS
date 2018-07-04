@@ -1,0 +1,67 @@
+{
+    "name": "Evento",
+    "fields": [
+        {
+            "fieldName": "idEvento",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "tsEvento",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "note",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "assistito",
+            "otherEntityName": "assistito",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "evento"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "tipo",
+            "otherEntityName": "tipoEvento",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "evento"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "gestore",
+            "otherEntityName": "gestore",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "evento"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "origine",
+            "otherEntityName": "produttore",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "eventi",
+            "relationshipName": "stati",
+            "otherEntityName": "stato",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20180704162118",
+    "entityTableName": "evento",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "microserviceName": "jeventorMS"
+}

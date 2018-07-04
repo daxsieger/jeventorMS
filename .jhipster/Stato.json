@@ -1,0 +1,44 @@
+{
+    "name": "Stato",
+    "fields": [
+        {
+            "fieldName": "idStadio",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "dsStadio",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tsCambioStato",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "stadio",
+            "otherEntityName": "stadio",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "stato"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "eventi",
+            "otherEntityName": "evento",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "stati"
+        }
+    ],
+    "changelogDate": "20180704162123",
+    "entityTableName": "stato",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "microserviceName": "jeventorMS"
+}

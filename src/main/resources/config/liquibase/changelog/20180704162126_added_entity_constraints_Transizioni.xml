@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Transizioni.
+    -->
+    <changeSet id="20180704162126-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="processo_id"
+                                 baseTableName="transizioni"
+                                 constraintName="fk_transizioni_processo_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="processo"/>
+
+        <addForeignKeyConstraint baseColumnNames="stadio_iniziale_id"
+                                 baseTableName="transizioni"
+                                 constraintName="transizioni_stadio_inizi_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="stadio"/>
+
+        <addForeignKeyConstraint baseColumnNames="stadio_finale_id"
+                                 baseTableName="transizioni"
+                                 constraintName="transizioni_stadio_final_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="stadio"/>
+
+    </changeSet>
+</databaseChangeLog>
